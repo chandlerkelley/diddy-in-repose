@@ -4,11 +4,16 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require("mongoose");
+mongoose.Promise = require('bluebird');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+//connect to database
+mongoose.connect("mongodb://localhost/dogs-on-film");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -50,7 +55,7 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
-  res.render('error', {
+  res.render('pages/error', {
     message: err.message,
     error: {}
   });

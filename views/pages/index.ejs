@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dogs on Film</title>
+    <link rel='stylesheet' href='/stylesheets/reset.css'>
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+  </head>
+  <body>
+  	<% include ../partials/header.ejs %>
+  	<% videos.forEach(function(video) { %>
+  		<div class="vid-box">
+  			<iframe width="400" height="300" src="https://www.youtube.com/embed/4HWcViTXdYc?rel=0" frameborder="0" allowfullscreen></iframe>
+  			<h3><%= video.title %></h3>
+  			<h3><%= video.artist %></h3>
+  			<p><%= video.description %></p>
+  		</div>
+  	<% }) %>
+  </body>
+</html>
