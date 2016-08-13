@@ -1,19 +1,54 @@
 body {
 	background-color: #1234EF;
+	position: relative;
 }
 
 header {
 	height: 80px;
 	width: 100%;
-	background-color: #000;
+	background-color: #FFF;
 	position: fixed;
 	top: 0;
 }
+
+.wrapper {
+	top: 80px;
+	position: absolute;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+/*.content {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 1000px;
+}*/
 
 a {
   color: #00B7FF;
 }
 
 .vid-box {
-	background-color: #000;
+	background-color: #FFF;
+	display: inline-block;
+	margin: 20px;
+	width: 40%;
+}
+
+.vid-wrapper {
+	margin: 10px;
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }

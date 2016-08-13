@@ -10,4 +10,18 @@ router.get('/', function(req, res, next) {
 	})
 });
 
+/* Create */
+router.post("/", function(req, res, next) {
+	var linkUrl = req.body.url
+	var urlStart = linkUrl.indexOf("=");
+	var urlCode = linkUrl.substr(urlStart, 11);
+	var time = req.body.min*60 + req.body.sec;
+	var newVideo = new Video ({
+		url: "http://https://www.youtube.com/embed/" + urlCode + "?rel=0&start=" + time,
+		title: req.body.title,
+		artist: req.body.artist,
+		description: req.body.description
+	});
+});
+
 module.exports = router;
