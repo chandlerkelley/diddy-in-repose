@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Diddy in Repose</title>
+    <title>Dogs on Film</title>
     <link rel='stylesheet' href='/stylesheets/reset.css'>
     <link rel='stylesheet' href='/stylesheets/style.css'>
+    <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
   </head>
   <body>
-  	<div id="formContainer">
-  	<% include ../partials/new-vid-form.ejs %>
-  	<% include ../partials/user-form.ejs %>
-  	<% include ../partials/login-form.ejs %>
-  	</div>
   	<% include ../partials/header.ejs %>
   	<div class="wrapper">
 	  	<% videos.forEach(function(video) { %>
@@ -27,6 +25,4 @@
 	  	<% }) %>
   	</div>
   </body>
-  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-  <script src="javascripts/script.js"></script>
 </html>

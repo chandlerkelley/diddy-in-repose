@@ -9,6 +9,7 @@ var VideoSchema = new mongoose.Schema({
 	description: { type: String },
 	goodDogCount: { type: Number },
 	badDogCount: { type: Number },
+	userName: { type: String },
 	_user: { type: mongoose.Schema.Types.ObjectId, ref: "User"}
 })
 

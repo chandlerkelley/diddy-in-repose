@@ -21,6 +21,18 @@ var videos = [
 	artist: "Snoop Dogg",
 	title: "Who Am I (What's My Name)",
 	description: "Snoop turns into a dog! Wow!"
+},
+{
+	url: "https://www.youtube.com/embed/-hIjgofcuWU?rel=0",
+	artist: "Snoop Dogg",
+	title: "Who Am I (What's My Name)",
+	description: "Snoop turns into a dog! Wow!"
+},
+{
+	url: "https://www.youtube.com/embed/-hIjgofcuWU?rel=0",
+	artist: "Snoop Dogg",
+	title: "Who Am I (What's My Name)",
+	description: "Snoop turns into a dog! Wow!"
 }
 ];
 
