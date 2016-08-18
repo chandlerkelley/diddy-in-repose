@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 
 //should appearTime be a string?
 
-var VideoSchema = new mongoose.Schema({
+var Video = new mongoose.Schema({
 	url: { type: String, required: true },
 	artist: { type: String, rquired: true },
 	title: { type: String, required: true },
@@ -13,4 +13,4 @@ var VideoSchema = new mongoose.Schema({
 	_user: { type: mongoose.Schema.Types.ObjectId, ref: "User"}
 })
 
-module.exports = mongoose.model("Video", VideoSchema);
+module.exports = mongoose.model("Video", Video);

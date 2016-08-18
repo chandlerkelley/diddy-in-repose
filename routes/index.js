@@ -1,5 +1,6 @@
 var express = require("express");
 var router = express.Router();
+var passport = require("passport");
 var Video = require("../models/video");
 
 /* GET home page. */
@@ -9,6 +10,16 @@ router.get('/', function(req, res, next) {
 		res.render('pages/index', {videos: videos});
 	})
 });
+
+// Post /signup
+router.post("/signup", function(req, res, next) {
+	var signUpStrategy = passport.authenticate("local-signup", {
+		successRedirect : "/",
+		failureRedirect : "/",
+		failureFlash : true
+	});
+	return signUpStrategy(req, res, next);
+})
 
 /* Create */
 router.post("/", function(req, res, next) {
