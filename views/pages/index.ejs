@@ -4,22 +4,57 @@
     <title>Dogs on Film</title>
     <link rel='stylesheet' href='/stylesheets/reset.css'>
     <link rel='stylesheet' href='/stylesheets/style.css'>
+    <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
   </head>
   <body>
   	<% include ../partials/header.ejs %>
   	<div class="wrapper">
-	  	<!-- <div class="content"> -->
-		  	<% videos.forEach(function(video) { %>
-		  		<div class="vid-box">
-		  			<div class="vid-wrapper">
-		  				<iframe src="<%= video.url %>" frameborder="0" allowfullscreen></iframe>
-		  			</div>
+  		<div class="new-dog">
+  			<h1>New Dog</h1>
+  			<form class="new-vid" action="/" method="post">
+				<label for="url">YouTube address</label>
+				<input type="text" name="url"> 
+				<br>
+
+				<label for="title">Name of song</label>
+				<input type="text" name="title"> 
+				<br>
+
+				<label for="url">Name of artist</label>
+				<input type="text" name="artist"> 
+				<br>
+
+				<label for="url">Description of dog</label>
+				<input type="text" name="description"> 
+				<br>
+
+				<label for="time">Time of dog's first appearance</label>
+				<br>
+				<label for="min">Minutes</label>
+				<input type="number" name="min">
+				<br> 
+				<label for="sec">Seconds</label>
+				<input type="number" name="second">
+				<br>
+
+				<button type="submit">Save</button>
+
+  			</form>
+  		</div>
+	  	<% videos.forEach(function(video) { %>
+	  		<div class="vid-box">
+	  			<div class="vid-wrapper">
+	  				<iframe src="<%= video.url %>" frameborder="0" allowfullscreen></iframe>
+	  			</div>
+	  			<div class="info">
 		  			<h3><%= video.title %></h3>
 		  			<h3><%= video.artist %></h3>
 		  			<p><%= video.description %></p>
-		  		</div>
-		  	<% }) %>
-	  	<!-- </div> -->
+	  			</div>
+	  		</div>
+	  	<% }) %>
   	</div>
   </body>
 </html>
