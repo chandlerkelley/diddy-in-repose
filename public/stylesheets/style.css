@@ -112,6 +112,16 @@ iframe {
 	margin: 10px;
 	font-family: "Helvetica", sans;
 	font-weight: 300;
+	display: flex;
+	justify-content: space-between;
+}
+
+.username {
+	text-decoration: none;
+}
+
+.username:hover {
+	text-decoration: underline;
 }
 
 #formContainer {

@@ -19,14 +19,19 @@
 	  				<iframe src="<%= video.url %>" frameborder="0" allowfullscreen></iframe>
 	  			</div>
 	  			<div class="info">
-		  			<h3><%= video.title %></h3>
-		  			<h3><%= video.artist %></h3>
-		  			<p><%= video.description %></p>
+            <div class="info-left">
+  		  			<p><%= video.title %></p>
+  		  			<p><%= video.artist %></p>
+  		  			<p><%= video.description %></p>
+            </div>
+            <div class="info-right">
+              <p>Posted by <a class="username" href="/users/<%= video._user %>"><%= video.userName %></a></p>
+            </div>
 	  			</div>
 	  		</div>
 	  	<% }) %>
   	</div>
   </body>
   <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-  <script src="javascripts/script.js"></script>
+  <script src="/javascripts/script.js"></script>
 </html>
