@@ -1,9 +1,29 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+var Video = require("../models/video");
+
+function makeError(res, message, status) {
+  res.statusCode = status;
+  var error = new Error(message);
+  error.status = status;
+  return error;
+};
+
+function authenticate(req, res, next) {
+  if(!req.isAuthenticated()) {
+    req.flash("error", "Not Allowed");
+    res.redirect('/');
+  }
+  else {
+    next();
+  }
+}
+
+//INDEX
+router.get('/', authenticate, function(req, res, next) {
+  var videos = global.currentUser.videos;
+  res.render('pages/user', { videos: videos, message: req.flash() });
 });
 
 module.exports = router;

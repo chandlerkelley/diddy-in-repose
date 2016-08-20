@@ -1,10 +1,10 @@
 <nav>
 	<h1 class="title">Diddy in Repose</h1>
 	<% if (currentUser) { %>
-		<a class="nav-links" href="#"><button class="nav-button">Log Out</button></a>
+		<a class="nav-links" href="/logout"><button class="nav-button">Log Out</button></a>
 		<button class="nav-button" id="newVidButton">New Video</button>
-		<a class="nav-links" href="#"><button class="nav-button">My Videos</button></a>
-		<a class="nav-links" href="#"><button class="nav-button">Home</button></a>
+		<a class="nav-links" href="/users/"><button class="nav-button">My Videos</button></a>
+		<a class="nav-links" href="/"><button class="nav-button">Home</button></a>
 	<% } else { %> 
 		<button class="nav-button" id="logInButton">Sign In</button>
 		<button class="nav-button" id="newUserButton">Sign Up</button>

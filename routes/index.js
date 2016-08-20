@@ -21,6 +21,23 @@ router.post("/signup", function(req, res, next) {
 	return signUpStrategy(req, res, next);
 })
 
+// Post /login
+router.post('/login', function(req, res, next) {
+  var loginProperty = passport.authenticate('local-login', {
+    successRedirect : '/',
+    failureRedirect : '/',
+    failureFlash : true
+  });
+
+  return loginProperty(req, res, next);
+});
+
+// Post /logout
+router.get('/logout', function(req, res, next) {
+  req.logout();
+  res.redirect('/');
+});
+
 /* Create */
 router.post("/", function(req, res, next) {
 	var linkUrl = req.body.url
