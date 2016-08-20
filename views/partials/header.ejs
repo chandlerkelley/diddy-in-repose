@@ -1,19 +1,19 @@
 <nav>
-	<h1 class="title">Diddy in Repose</h1>
+	<h1 class="title">DIDDY IN REPOSE</h1>
 	<% if (currentUser) { %>
-		<a class="nav-links" href="/logout"><button class="nav-button">Log Out</button></a>
-		<button class="nav-button" id="newVidButton">New Video</button>
-		<a class="nav-links" href="/users/"><button class="nav-button">My Videos</button></a>
-		<a class="nav-links" href="/"><button class="nav-button">Home</button></a>
+		<a class="nav-links" href="/logout"><button class="nav-button">log out</button></a>
+		<button class="nav-button" id="newVidButton">new video</button>
+		<a class="nav-links" href="/users/"><button class="nav-button">my videos</button></a>
+		<a class="nav-links" href="/"><button class="nav-button">home</button></a>
 	<% } else { %> 
-		<button class="nav-button" id="logInButton">Sign In</button>
-		<button class="nav-button" id="newUserButton">Sign Up</button>
-		<a class="nav-links" href="#"><button class="nav-button">Videos</button></a>
+		<button class="nav-button" id="logInButton">sign in</button>
+		<button class="nav-button" id="newUserButton">sign up</button>
+		<a class="nav-links" href="#"><button class="nav-button">videos</button></a>
 	<% }; %>
 </nav>
 <header>
 	<div class="header-left">
-		<p>A crowdsourced collection of music videos where Diddy does not rap, sing, produce, nor otherwise perform music.</p>
+		<p class="header-text">A crowdsourced collection of music videos where Diddy does not rap, sing, produce, nor otherwise perform music.</p>
 	</div>
 	<img class="diddy" src="/images/diddy-short.png" alt="Diddy" />
 </header>
