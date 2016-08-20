@@ -7,8 +7,6 @@ var Video = new mongoose.Schema({
 	artist: { type: String, rquired: true },
 	title: { type: String, required: true },
 	description: { type: String },
-	goodDogCount: { type: Number },
-	badDogCount: { type: Number },
 	userName: { type: String },
 	_user: { type: mongoose.Schema.Types.ObjectId, ref: "User"}
 })

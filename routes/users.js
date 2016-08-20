@@ -26,4 +26,6 @@ router.get('/', authenticate, function(req, res, next) {
   res.render('pages/user', { videos: videos, message: req.flash() });
 });
 
+//Other user view (get videos by :id in url)
+
 module.exports = router;

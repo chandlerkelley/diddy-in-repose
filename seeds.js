@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 mongoose.Promise = require("bluebird");
 var Video = require("./models/video");
+var User = require("./models/user")
 
 mongoose.connect("mongodb://localhost/dogs-on-film");
 

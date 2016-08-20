@@ -32,7 +32,7 @@ router.post('/login', function(req, res, next) {
   return loginProperty(req, res, next);
 });
 
-// Post /logout
+// Get /logout
 router.get('/logout', function(req, res, next) {
   req.logout();
   res.redirect('/');
@@ -48,7 +48,9 @@ router.post("/", function(req, res, next) {
 		url: "https://www.youtube.com/embed/" + urlCode + "?rel=0&start=" + time,
 		title: req.body.title,
 		artist: req.body.artist,
-		description: req.body.description
+		description: req.body.description,
+		userName: global.currentUser.local.userName,
+		_user: global.currentUser._id
 	});
 	newVideo.save()
 	.then(function() {
