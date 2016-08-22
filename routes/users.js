@@ -47,6 +47,16 @@ router.get("/edit/:id", authenticate, function(req, res, next) {
   })
 })
 
+//View other user
+router.get("/:id", function(req, res, next) {
+  var userId = req.params.id;
+  console.log(userId);
+  Video.find({"_user" : userId})
+  .then(function(videos) {
+    res.render("pages/view", { videos: videos, message: req.flash() })
+  })
+})
+
 //Update vid
 router.put("/:id", authenticate, function(req, res, next) {
   Video.findById(req.params.id)
@@ -60,22 +70,20 @@ router.put("/:id", authenticate, function(req, res, next) {
     return video.save();
   })
   .then(function() {
-    res.redirect("/users");
+    res.redirect("/");
   }, function(err) {
     return next(err);
   });
 })
 
-//View other user
-router.get("/:id", function(req, res, next) {
-  var userId = req.params.id;
-  console.log(userId);
-  Video.find({"_user" : userId})
-  .then(function(videos) {
-    res.render("pages/view", { videos: videos, message: req.flash() })
-  })
-})
-
-
+//Delete vid
+router.delete("/delete/:id", authenticate, function(req, res, next) {
+  Video.findByIdAndRemove(req.params.id)
+  .then(function() {
+    res.redirect('/');
+  }, function(err) {
+    return next(err);
+  });
+});
 
 module.exports = router;

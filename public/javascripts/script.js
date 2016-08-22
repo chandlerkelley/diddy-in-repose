@@ -1,3 +1,5 @@
+var deleteCheck = $("")
+
 $(function() {
 	var $formContainer = $("#formContainer");
 	var $newUser = $("#newUser");
@@ -18,6 +20,13 @@ $(function() {
 		$formContainer.show();
 		$logIn.show(200);
 	});
+	$(".delete-button").click(function() {
+		console.log($(this).attr("id"));
+		var videoId = $(this).attr("id");
+		$("#delete-form").attr("action", "/users/delete/" + videoId + "?_method=DELETE");
+		$formContainer.show();
+		$("#delete-check").show(200);
+	})
 	$(".close").click(function() {
 		$formContainer.hide();
 		$(".popup").hide();

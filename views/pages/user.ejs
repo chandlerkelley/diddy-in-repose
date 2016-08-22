@@ -33,7 +33,7 @@
                 <p>Posted by <a class="username" href="/users/<%= video._user %>"><%= video.userName %></a></p>
                 <% if (video.currentUser === true) { %>
                   <a href="/users/edit/<%= video._id %>"><button class="edit green-button">edit</button></a>
-                  <a href="/users/delete/<%= video._id %>"><button class="delete green-button">delete</button></a>
+                  <a href="/users/delete/<%= video._id %>"><button class="delete-button green-button">delete</button></a>
                 <% } %>
               </div>
             </div>
