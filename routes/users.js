@@ -53,7 +53,12 @@ router.get("/:id", function(req, res, next) {
   console.log(userId);
   Video.find({"_user" : userId})
   .then(function(videos) {
-    res.render("pages/view", { videos: videos, message: req.flash() })
+    videos.forEach(function(video) {
+      if (currentUser && currentUser._id.equals(video._user)) {
+        video.currentUser = true;
+      }
+    })
+    res.render("pages/view", { videos : videos })
   })
 })
 
