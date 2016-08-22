@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Diddy in Repose</title>
+    <link rel='stylesheet' href='/stylesheets/reset.css'>
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+  </head>
+  <body>
+    <div id="formContainer">
+      <% include ../partials/user-form.ejs %>
+      <% include ../partials/login-form.ejs %>
+    </div>
+      <% include ../partials/header.ejs %>
+    <div class="main-form">
+      <div id="newVideo" class="embed">
+        <div class="form-top">
+          <h1 class="form-title">EDIT MUSIC VIDEO</h1>
+        </div>
+
+        <form class="form" action="/users/<%= video._id %>?_method=PUT" method="post">
+          <div class="form-part">
+            <label for="url">youtube address</label>
+            <input type="text" name="url" value="<%= video.url %>"> 
+          </div>
+
+          <div class="form-part">
+            <label for="title">name of song</label>
+            <input type="text" name="title" value="<%= video.title %>"> 
+          </div>
+
+          <div class="form-part">
+            <label for="artist">name of artist</label>
+            <input type="text" name="artist" value="<%= video.artist %>"> 
+          </div>
+
+          <fieldset>
+            <legend> time of diddy's first appearance 
+            </legend>
+
+            <div class="form-part">
+              <label for="min">minutes</label>
+              <input type="number" class="time-input" name="min" <% if (video.minutes) { %>
+                value= "<%= video.minutes %>"
+              <% } else { %>
+                value=0
+              <% } %>
+              >
+            </div>
+
+            <div class="form-part">
+              <label for="sec">seconds</label>
+              <input type="number" class="time-input" name="second" <% if (video.seconds) { %>
+                value= "<%= video.seconds %>"
+              <% } else { %>
+                value=0
+              <% } %>
+              >
+            </div>
+
+          </fieldset>
+          
+          <div class="form-part stack">
+            <label for="url">what's diddy doing?</label>
+            <textarea type="text" name="description"><%= video.description %></textarea>
+          </div>
+
+          <button class="green-button" type="submit">save</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script src="/javascripts/script.js"></script>
+</html>

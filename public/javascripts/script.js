@@ -3,17 +3,24 @@ $(function() {
 	var $newUser = $("#newUser");
 	var $newVideo = $("#newVideo");
 	var $logIn = $("#logIn")
-	$("#newVidButton").click(function() {
-		$formContainer.toggle();
-		$newVideo.toggle(200);
-	});
+	// $("#newVidButton").click(function() {
+	// 	$(".popup").hide()
+	// 	$formContainer.show();
+	// 	$newVideo.show(200);
+	// });
 	$("#newUserButton").click(function() {
-		$formContainer.toggle();
-		$newUser.toggle(200);
+		$(".popup").hide()
+		$formContainer.show();
+		$newUser.show(200);
 	});
 	$("#logInButton").click(function() {
-		$formContainer.toggle();
-		$logIn.toggle(200);
+		$(".popup").hide()
+		$formContainer.show();
+		$logIn.show(200);
+	});
+	$(".close").click(function() {
+		$formContainer.hide();
+		$(".popup").hide();
 	});
 });
 

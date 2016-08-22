@@ -7,11 +7,11 @@
   </head>
   <body>
     <div id="formContainer">
-    <% include ../partials/new-vid-form.ejs %>
     <% include ../partials/user-form.ejs %>
     <% include ../partials/login-form.ejs %>
     </div>
     <% include ../partials/header.ejs %>
+    <% include ../partials/banner.ejs %>
     <div class="wrapper">
       <% videos.forEach(function(video) { %>
         <div class="vid-box">
@@ -33,5 +33,5 @@
     </div>
   </body>
   <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-  <script src="javascripts/script.js"></script>
+  <script src="/javascripts/script.js"></script>
 </html>

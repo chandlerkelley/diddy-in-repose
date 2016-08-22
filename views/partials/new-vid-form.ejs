@@ -1,31 +1,48 @@
-<div id="newVideo" class="popup">
-	<h1>New Music Video</h1>
-	<form class="form" action="/" method="post">
-		<label for="url">YouTube address</label>
-		<input type="text" name="url"> 
-		<br>
 
-		<label for="title">Name of song</label>
-		<input type="text" name="title"> 
-		<br>
-
-		<label for="url">Name of artist</label>
-		<input type="text" name="artist"> 
-		<br>
-
-		<label for="url">Description of dog</label>
-		<input type="text" name="description"> 
-		<br>
-
-		<label for="time">Time of dog's first appearance</label>
-		<br>
-		<label for="min">Minutes</label>
-		<input type="number" name="min">
-		<br> 
-		<label for="sec">Seconds</label>
-		<input type="number" name="second">
-		<br>
-
-		<button type="submit">Save</button>
-	</form>
+<div class="form-part">
+	<label for="url">youtube address</label>
+	<input type="text" name="url" value="<%= video.url %>"> 
 </div>
+
+<div class="form-part">
+	<label for="title">name of song</label>
+	<input type="text" name="title" value="<%= video.title %>"> 
+</div>
+
+<div class="form-part">
+	<label for="artist">name of artist</label>
+	<input type="text" name="artist" value="<%= video.artist %>"> 
+</div>
+
+<fieldset>
+	<legend> time of diddy's first appearance 
+	</legend>
+
+	<div class="form-part">
+		<label for="min">minutes</label>
+		<input type="number" class="time-input" name="min" <% if (video.minutes) { %>
+			value= "<%= video.minutes %>"
+		<% } else { %>
+			value=0
+		<% } %>
+		>
+	</div>
+
+	<div class="form-part">
+		<label for="sec">seconds</label>
+		<input type="number" class="time-input" name="second" <% if (video.seconds) { %>
+			value= "<%= video.seconds %>"
+		<% } else { %>
+			value=0
+		<% } %>
+		>
+	</div>
+
+</fieldset>
+
+<div class="form-part stack">
+	<label for="url">what's diddy doing?</label>
+	<textarea type="text" name="description"><%= video.description %></textarea>
+</div>
+
+<button class="green-button" type="submit">save</button>

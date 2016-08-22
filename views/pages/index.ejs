@@ -7,30 +7,40 @@
   </head>
   <body>
   	<div id="formContainer">
-  	<% include ../partials/new-vid-form.ejs %>
   	<% include ../partials/user-form.ejs %>
   	<% include ../partials/login-form.ejs %>
   	</div>
   	<% include ../partials/header.ejs %>
-  	<div class="wrapper">
-	  	<% videos.forEach(function(video) { %>
-	  		<div class="vid-box">
-	  			<div class="vid-wrapper">
-	  				<iframe src="<%= video.url %>" frameborder="0" allowfullscreen></iframe>
-	  			</div>
-	  			<div class="info">
-            <div class="info-left">
-  		  			<p><%= video.title %></p>
-  		  			<p><%= video.artist %></p>
-  		  			<p class="description"><%= video.description %></p>
-            </div>
-            <div class="info-right">
-              <p>Posted by <a class="username" href="/users/<%= video._user %>"><%= video.userName %></a></p>
-            </div>
-	  			</div>
-	  		</div>
-	  	<% }) %>
-  	</div>
+    <div class="main">
+    <% include ../partials/banner.ejs %>    
+    	<div class="wrapper">
+  	  	<% videos.forEach(function(video) { %>
+        <% if (video.currentUser === true) { %>
+          <div class="vid-box current-user-video">
+        <% } else { %>
+          <div class="vid-box">
+        <% } %>
+  	  			<div class="vid-wrapper">
+  	  				<iframe src="<%= video.url %>" frameborder="0" allowfullscreen></iframe>
+  	  			</div>
+  	  			<div class="info">
+              <div class="info-left">
+    		  			<p><%= video.title %></p>
+    		  			<p><%= video.artist %></p>
+    		  			<p class="description"><%= video.description %></p>
+              </div>
+              <div class="info-right">
+                <p>Posted by <a class="username" href="/users/<%= video._user %>"><%= video.userName %></a></p>
+                <% if (video.currentUser === true) { %>
+                  <a href="/users/edit/<%= video._id %>"><button class="edit green-button">edit</button></a>
+                  <a href="/users/delete/<%= video._id %>"><button class="delete green-button">delete</button></a>
+                <% } %>
+              </div>
+  	  			</div>
+  	  		</div>
+  	  	<% }) %>
+    	</div>
+    </div>
   </body>
   <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
   <script src="/javascripts/script.js"></script>

@@ -2,12 +2,18 @@ var express = require("express");
 var router = express.Router();
 var passport = require("passport");
 var Video = require("../models/video");
+var User = require("../models/user");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	Video.find({})
 	.then(function(videos) {
-		res.render('pages/index', {videos: videos});
+		videos.forEach(function(video) {
+			if (currentUser && currentUser._id.equals(video._user)) {
+				video.currentUser = true;
+			}
+		})
+	res.render('pages/index', {videos: videos});
 	})
 });
 

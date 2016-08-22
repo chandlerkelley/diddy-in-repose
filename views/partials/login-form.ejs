@@ -1,14 +1,20 @@
 <div id="logIn" class="popup">
-	<h1>Log In</h1>
+	<div class="form-top">
+		<h1>LOG IN</h1>
+		<button class="close">&#10006;</button>
+	</div>
+
 	<form class="form" action="/login" method="post">
-		<label for="userName">Username</label>
-		<input type="text" name="userName"> 
-		<br>
+		<div class="form-part">
+			<label for="userName">username</label>
+			<input type="text" name="userName"> 
+		</div>
 
-		<label for="title">Password</label>
-		<input type="password" name="password"> 
-		<br>
+		<div class="form-part">
+			<label for="title">password</label>
+			<input type="password" name="password"> 
+		</div>
 
-		<button type="submit">Save</button>
+		<button class="green-button" type="submit">submit</button>
 	</form>
 </div>
