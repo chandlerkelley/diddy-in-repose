@@ -17,7 +17,7 @@ var users = require('./routes/users');
 var app = express();
 
 //connect to database
-mongoose.connect("mongodb://localhost/dogs-on-film");
+mongoose.connect("mongodb://localhost/diddy-in-repose");
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
