@@ -24,4 +24,8 @@ by any single other user.
 * bCrypt
 * Method Override
 
-## 
+##Wireframe
+
+##Links
+* [Deployed App](https://diddy-in-repose.herokuapp.com/)
+* [Trello Board](https://trello.com/b/o2WyQpGt/diddy-in-repose)

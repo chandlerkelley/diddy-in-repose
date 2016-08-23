@@ -49,7 +49,7 @@ router.post("/", function(req, res, next) {
 	var linkUrl = req.body.url
 	var urlStart = linkUrl.indexOf("=") + 1;
 	var urlCode = linkUrl.substr(urlStart, 11);
-	var time = req.body.minutes*60 + req.body.seconds;
+	var time = parseInt(req.body.minutes * 60) + parseInt(req.body.seconds);
 	var newVideo = new Video ({
 		url: "https://www.youtube.com/embed/" + urlCode + "?rel=0&start=" + time,
 		title: req.body.title,
