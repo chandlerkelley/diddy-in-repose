@@ -1,13 +1,13 @@
 <nav>
 	<h1 class="title">DIDDY IN REPOSE</h1>
 	<% if (currentUser) { %>
-		<a class="nav-links" href="/logout"><button class="nav-button">log out</button></a>
-		<a class="nav-links" href="/users/new"><button class="nav-button" id="newVidButton">new video</button></a>
-		<a class="nav-links" href="/users/"><button class="nav-button">my videos</button></a>
 		<a class="nav-links" href="/"><button class="nav-button">home</button></a>
+		<a class="nav-links" href="/users/"><button class="nav-button">my videos</button></a>
+		<a class="nav-links" href="/users/new"><button class="nav-button" id="newVidButton">new video</button></a>
+		<a class="nav-links" href="/logout"><button class="nav-button">log out</button></a>
 	<% } else { %> 
-		<button class="nav-button" id="logInButton">sign in</button>
-		<button class="nav-button" id="newUserButton">sign up</button>
 		<a class="nav-links" href="/"><button class="nav-button">videos</button></a>
+		<button class="nav-button" id="newUserButton">sign up</button>
+		<button class="nav-button" id="logInButton">sign in</button>
 	<% }; %>
 </nav>

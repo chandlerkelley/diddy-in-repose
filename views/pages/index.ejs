@@ -26,9 +26,9 @@
   	  			</div>
   	  			<div class="info">
               <div class="info-left">
-    		  			<p><%= video.title %></p>
-    		  			<p><%= video.artist %></p>
-    		  			<p class="description"><%= video.description %></p>
+    		  			<p class="song-info"><%= video.title %></p>
+    		  			<p class="song-info"><%= video.artist %></p>
+    		  			
               </div>
               <div class="info-right">
                 <p>Posted by <a class="username" href="/users/<%= video._user %>"><%= video.userName %></a></p>
@@ -36,6 +36,9 @@
                   <a href="/users/edit/<%= video._id %>"><button class="edit green-button">edit</button></a>
                   <button class="delete-button green-button" id="<%= video._id %>">delete</button>
                 <% } %>
+              </div>
+              <div class="info-bottom">
+                <p class="description"><%= video.description %></p>
               </div>
   	  			</div>
   	  		</div>

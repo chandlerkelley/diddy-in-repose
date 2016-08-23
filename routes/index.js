@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 				video.currentUser = true;
 			}
 		})
-	res.render('pages/index', {videos: videos});
+	res.render('pages/index', {videos: videos, message: req.flash()});
 	})
 });
 

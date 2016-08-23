@@ -1,6 +1,19 @@
 <header>
 	<div class="header-left">
-		<p class="header-text">A crowdsourced collection of music videos where Diddy does not rap, sing, produce, nor otherwise perform music.</p>
+		<p class="header-text">A crowdsourced collection of music videos where Diddy appears, but does not rap, produce, nor otherwise perform music.</p>
 	</div>
 	<img class="diddy" src="/images/diddy-short.png" alt="Diddy" />
 </header>
+<div class="flash">
+  <% if (typeof message !== 'undefined') { %>
+    <% if (typeof message.error !== 'undefined' && message.error.length > 0) { %>
+      <div class="red"><%= message.error %></div>
+    <% } %>
+    <% if (typeof message.info !== 'undefined' && message.info.length > 0) { %>
+      <div class="yellow"><%= message.info %></div>
+    <% } %>
+    <% if (typeof message.success !== 'undefined' && message.success.length > 0) { %>
+      <div class="green"><%= message.success %></div>
+    <% } %>
+  <% } %>
+</div>

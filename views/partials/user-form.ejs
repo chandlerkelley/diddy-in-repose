@@ -11,10 +11,18 @@
 		</div>
 
 		<div class="form-part">
-			<label for="title">password</label>
-			<input type="password" name="password"> 
+			<label for="password">enter password</label>
+			<input id="password" class="input" type="password" name="password"> 
 		</div>
+		<p id="pass-mark" class="mark">&#10004</p>
 
-		<button class="green-button" type="submit">submit</button>
+		<div class="form-part">
+			<label for="password-check">confirm password</label>
+			<input id="password-check" class="input" type="password" name="password-check">
+		</div>
+		<p id="pass-check-mark" class="mark">&#10004</p> 
+
+		<button id="create-user-button" class="green-button" type="button">submit</button>
+		<p id="user-feedback">password must be at least 6 characters long</p>
 	</form>
 </div>
