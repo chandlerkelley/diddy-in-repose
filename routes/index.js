@@ -46,17 +46,17 @@ router.get('/logout', function(req, res, next) {
 
 /* Create */
 router.post("/", function(req, res, next) {
-	var linkUrl = req.body.url
-	var urlStart = linkUrl.indexOf("=") + 1;
-	var urlCode = linkUrl.substr(urlStart, 11);
-	var time = parseInt(req.body.minutes * 60) + parseInt(req.body.seconds);
+	// var linkUrl = req.body.url
+	// var urlStart = linkUrl.indexOf("=") + 1;
+	// var urlCode = linkUrl.substr(urlStart, 11);
+	// var time = parseInt(req.body.minutes * 60) + parseInt(req.body.seconds);
 	var newVideo = new Video ({
-		url: "https://www.youtube.com/embed/" + urlCode + "?rel=0&start=" + time,
+		url: req.body.url,
 		title: req.body.title,
 		artist: req.body.artist,
 		description: req.body.description,
 		minutes: req.body.minutes,
-		seconds: req.body.secconds,
+		seconds: req.body.seconds,
 		userName: global.currentUser.local.userName,
 		_user: global.currentUser._id
 	});

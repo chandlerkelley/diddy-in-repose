@@ -16,13 +16,18 @@
       <% include ../partials/banner.ejs %>
       <div class="wrapper">
         <% videos.forEach(function(video) { %>
+          <% var linkUrl = video.url %>
+          <% var urlStart = linkUrl.indexOf("=") + 1; %>
+          <% var urlCode = linkUrl.substr(urlStart, 11); %>
+          <% var time = parseInt(video.minutes * 60) + parseInt(video.seconds); %>
+          <% var urlEmbed = "https://www.youtube.com/embed/" + urlCode + "?rel=0&start=" + time; %>
           <% if (video.currentUser === true) { %>
           <div class="vid-box current-user-video">
           <% } else { %>
           <div class="vid-box">
           <% } %>
             <div class="vid-wrapper">
-              <iframe src="<%= video.url %>" frameborder="0" allowfullscreen></iframe>
+              <iframe src="<%= urlEmbed %>" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="info">
               <div class="info-left">
