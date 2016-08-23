@@ -1,9 +1,9 @@
 {
-  "name": "dogs-on-film",
+  "name": "diddy-in-repose",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -15,6 +15,7 @@
     "express": "~4.13.4",
     "express-session": "^1.14.0",
     "method-override": "^2.3.6",
+    "mongoose": "^4.5.9",
     "morgan": "~1.7.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
