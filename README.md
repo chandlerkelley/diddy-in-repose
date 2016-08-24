@@ -25,6 +25,7 @@ by any single other user.
 * Method Override
 
 ##Wireframe
+![Wireframe](public/images/wireframe.jpg)
 
 ##Links
 * [Deployed App](https://diddy-in-repose.herokuapp.com/)
