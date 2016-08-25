@@ -16,6 +16,7 @@
     <% include ../partials/banner.ejs %>    
     	<div class="wrapper">
   	  	<% videos.forEach(function(video) { %>
+          <!-- Creates embed code from YouTube page URL -->
           <% var linkUrl = video.url %>
           <% var urlStart = linkUrl.indexOf("=") + 1; %>
           <% var urlCode = linkUrl.substr(urlStart, 11); %>

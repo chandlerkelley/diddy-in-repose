@@ -30,7 +30,7 @@ router.get('/', authenticate, function(req, res, next) {
         video.currentUser = true;
       }
     })
-    res.render("pages/user", { videos : videos, message: req.flash() })
+    res.render("pages/index", { videos : videos, message: req.flash() })
   })
 });
 
@@ -58,7 +58,7 @@ router.get("/:id", function(req, res, next) {
         video.currentUser = true;
       }
     })
-    res.render("pages/view", { videos : videos, message: req.flash()  })
+    res.render("pages/index", { videos : videos, message: req.flash()  })
   })
 })
 
