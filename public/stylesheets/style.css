@@ -2,6 +2,7 @@ body {
 	background-color: #fff;
 	position: relative;
 	font-family: "Helvetica", sans;
+	min-height: 100vh;
 }
 
 nav {
